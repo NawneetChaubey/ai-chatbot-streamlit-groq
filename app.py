@@ -9,14 +9,14 @@ load_dotenv()                     # loading the env file from dotenv
 client = OpenAI(api_key=st.secrets["GROQ_API_KEY"],
    base_url="https://api.groq.com/openai/v1",)  # creating a client for the groq model using the api key from the env file
 st.title("Question Answer chat bot")  # this is the title of the application
-user = st.text_input("Question puchhh mai bataunga")
+user = st.text_input("Ask Questions ")
 
 # creating the memory so that ai can remeber the messages
 
 if "messages" not in st.session_state:
     st.session_state.messages =[{
         "role":"system",
-        "content":"You are a helpful AI Assistant"
+        "content":"helpful AI Assistant"
     }]
 
 # this will show the chat history 
